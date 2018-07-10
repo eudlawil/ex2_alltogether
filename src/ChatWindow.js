@@ -10,6 +10,9 @@ class ChatWindow extends Component {
   };
   
   isDisabled = () => {
+    if (this.state.message.text === "") {
+      return true;
+    }
     return false;
   };
 
@@ -32,6 +35,7 @@ class ChatWindow extends Component {
      const { user } = this.props;
      const { messages } = this.props;
      const { username, text } = this.state.message;
+
      return (
           <div className="chat-window">
             <h2>Super Awesome Chat</h2>
